@@ -107,40 +107,6 @@ src/
 - `npm test` - Run test suite
 - `npm run lint` - Run ESLint
 
-## 🏗 Architecture Decisions
-
-### State Management
-**Decision**: React Context API over Redux
-**Rationale**: 
-- Simpler setup for moderate complexity
-- Built-in React solution
-- Easier to understand and maintain
-- Sufficient for current requirements
-
-### Styling Approach
-**Decision**: CSS Custom Properties + BEM methodology
-**Rationale**:
-- Consistent theming across components
-- Better performance than CSS-in-JS
-- Easier maintenance and updates
-- Standard CSS approach
-
-### Data Normalization
-**Decision**: Service layer with normalized data models
-**Rationale**:
-- Consistent data structure across different APIs
-- Easier to add new review sources
-- Type-safe operations with TypeScript
-- Clean separation of concerns
-
-### Component Architecture
-**Decision**: Functional components with hooks
-**Rationale**:
-- Modern React best practices
-- Better performance with React 18
-- Cleaner, more readable code
-- Easier testing and debugging
-
 ## 🔌 API Integration
 
 ### Hostaway Reviews API
@@ -247,30 +213,6 @@ console.log(integrationInfo.limitations);
 - **Body**: 1rem (16px) - Default text
 - **Small**: 0.875rem (14px) - Secondary text
 
-### Spacing System
-- **Base unit**: 0.25rem (4px)
-- **Scale**: 1x, 2x, 3x, 4x, 6x, 8x, 12x, 16x, 20x, 24x
-
-## 🔄 API Behavior
-
-### Data Flow
-1. **Initial Load**: Fetch all reviews from Hostaway API
-2. **Normalization**: Convert to internal data format
-3. **State Management**: Store in React Context
-4. **Real-time Updates**: Reflect filter and selection changes
-5. **Persistence**: Selection state maintained during session
-
-### Error Handling
-- **Network Errors**: Graceful fallback with error messages
-- **API Timeouts**: Retry logic with exponential backoff
-- **Invalid Data**: Data validation and sanitization
-- **User Feedback**: Clear error states and recovery options
-
-### Performance Optimizations
-- **Lazy Loading**: Components loaded on demand
-- **Memoization**: Expensive calculations cached
-- **Debounced Filters**: Reduce API calls during filtering
-- **Virtual Scrolling**: Handle large review lists efficiently
 
 ## 🧪 Testing Strategy
 
@@ -307,34 +249,7 @@ REACT_APP_GOOGLE_PLACES_API_KEY=your_google_api_key_here
 ```
 
 ### Deployment Options
-- **Vercel** (Recommended for React apps)
-- **Netlify** (Good alternative with CDN)
-- **AWS S3 + CloudFront** (Scalable enterprise option)
-- **GitHub Pages** (Simple hosting for demos)
-
-## 🔮 Future Enhancements
-
-### Planned Features
-1. **Analytics Dashboard**: Advanced metrics and reporting
-2. **Response Management**: Reply to reviews from dashboard
-3. **Automated Workflows**: Smart review selection based on criteria
-4. **Multi-language Support**: Internationalization for global properties
-5. **Mobile App**: Native mobile experience for managers
-
-### Technical Improvements
-1. **GraphQL API**: More efficient data fetching
-2. **Real-time Updates**: WebSocket integration for live updates
-3. **Advanced Caching**: Redis for improved performance
-4. **AI Integration**: Sentiment analysis and smart categorization
-5. **Export Features**: PDF reports and data export options
-
-## 📞 Support
-
-For technical support or questions about the Reviews Dashboard:
-
-- **Documentation**: Check this README and code comments
-- **Issues**: Create GitHub issues for bugs or feature requests
-- **Development**: Follow the setup instructions for local development
+- **Vercel** (Recommended)
 
 ## 📄 License
 
