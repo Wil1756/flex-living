@@ -1,5 +1,9 @@
 # Flex Living - Reviews Dashboard
 
+
+🚀 **Live Demo:** [https://flex-living-fawn.vercel.app/dashboard](https://flex-living-fawn.vercel.app/dashboard)
+
+
 A comprehensive reviews management dashboard for Flex Living properties, enabling managers to assess property performance based on guest reviews from multiple channels.
 
 ## 🚀 Features
