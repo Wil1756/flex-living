@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { ReviewsProvider } from './contexts/ReviewsContext';
+import Dashboard from './components/Dashboard/Dashboard';
+import PropertyPage from './components/PropertyPage/PropertyPage';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <ReviewsProvider>
+        <Router>
+          <div className="App">
+            <Routes>
+              <Route path="/" element={<Navigate to="/dashboard" replace />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/property/:propertyId" element={<PropertyPage />} />
+            </Routes>
+          </div>
+        </Router>
+      </ReviewsProvider>
+    </ThemeProvider>
   );
 }
 
